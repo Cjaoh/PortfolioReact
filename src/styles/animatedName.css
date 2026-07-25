@@ -1,0 +1,61 @@
+.animated-name {
+  display: inline-block;
+  width: min(100%, 48rem);
+  margin: 0;
+  padding: 1.15em 0;
+  color: rgba(255, 255, 255, 0.42);
+  border: 4px double rgba(255, 255, 255, 0.22);
+  border-width: 4px 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: clamp(0.72rem, 1.5vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.animated-name span {
+  display: block;
+  margin: 0 auto;
+  padding: 0.2em 0 0.28em;
+  background:
+    linear-gradient(
+      90deg,
+      #67e8f9 0%,
+      #c084fc 20%,
+      #ffffff 42%,
+      #fbbf24 58%,
+      #a78bfa 78%,
+      #67e8f9 100%
+    )
+    repeat-y;
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.35rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.34);
+  -webkit-text-fill-color: transparent;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 640px) {
+  .animated-name {
+    width: 100%;
+    padding: 1em 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+@media (max-width: 420px) {
+  .animated-name span {
+    font-size: clamp(1.85rem, 12vw, 2.55rem);
+  }
+}

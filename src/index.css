@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/font/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/font/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/font/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: #0f051a;
+  color: #ffffff;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.hero-description-shine {
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+  letter-spacing: 0.16em;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), #ffffff, rgba(255, 255, 255, 0.18));
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  animation: hero-description-shine 3s linear infinite;
+}
+
+@keyframes hero-description-shine {
+  0% {
+    background-position: -500%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-description-shine {
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-description-shine {
+    color: #d4d4d8;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    animation: none;
+  }
+}
+  

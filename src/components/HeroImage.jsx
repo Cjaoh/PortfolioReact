@@ -6,19 +6,19 @@ const badges = [
     className: "badge-1",
     icon: FaLaptopCode,
     title: "Dev Web",
-    libs: "",
+    libs: "React, Node.js",
   },
   {
     className: "badge-2",
     icon: FaMobileAlt,
     title: "Dev Mobile",
-    libs: "",
+    libs: "React Native",
   },
   {
     className: "badge-3",
     icon: FaFigma,
     title: "Designer UI",
-    libs: "",
+    libs: "Figma, Tailwind",
   },
 ];
 
@@ -31,9 +31,12 @@ const HeroImage = () => {
         <div className="profile-image-frame">
           <div className="profile-image" id="profileImage">
             <img
-              alt="Rabearison Fy Tahina Kevin"
+              alt="Ratovonanahary Cérick Fernando"
               className="profile-photo"
-              src="/images/pdp2.jpg"
+              src="/images/pdp2.png"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
             />
           </div>
         </div>

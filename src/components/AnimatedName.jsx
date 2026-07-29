@@ -2,9 +2,9 @@ import "../styles/animatedName.css";
 
 const AnimatedName = () => {
   return (
-    <h1 className="animated-name" aria-label="Rabearison Fy Tahina Kevinn">
+    <h1 className="animated-name" aria-label="RATOVONANAHARY Cérick Fernando">
       Creative developer
-      <span>Rabearison Fy Tahina Kevinn</span>
+      <span>RATOVONANAHARY Cérick Fernando</span>
       Portfolio personnel
     </h1>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Briefcase,
   Code2,
@@ -12,9 +13,9 @@ import "../styles/header.css";
 
 const navItems = [
   { id: "home", en: "Home", fr: "Accueil", icon: Home },
-  { id: "about", en: "About", fr: "A propos", icon: User },
-  { id: "skills", en: "Skills", fr: "Competences", icon: Code2 },
-  { id: "experience", en: "Experience", fr: "Experience", icon: Briefcase },
+  { id: "about", en: "About", fr: "À propos", icon: User },
+  { id: "skills", en: "Skills", fr: "Compétences", icon: Code2 },
+  { id: "experience", en: "Experience", fr: "Expérience", icon: Briefcase },
   { id: "projects", en: "Projects", fr: "Projets", icon: Rocket },
   { id: "contact", en: "Contact", fr: "Contact", icon: Mail },
 ];
@@ -83,24 +84,25 @@ const Header = () => {
   return (
     <header className={`main-header ${isScrolled ? "scrolled" : ""}`} id="header">
       <nav className="nav-container" aria-label="Navigation principale">
-        <a className="nav-brand" href="#home" onClick={closeMenu}>
+        <Link className="nav-brand" to="/#home" onClick={closeMenu}>
           <span className="brand-logo">
             <span className="logo-bracket">&lt;</span>
-            <span className="logo-text">Khe Vin</span>
+            <span className="logo-text">CedJaoh (سيدجاه)</span>
             <span className="logo-bracket">/&gt;</span>
           </span>
-        </a>
+        </Link>
 
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`} id="navMenu">
           {navItems.map((item) => {
             const Icon = item.icon;
             const label = language === "en" ? item.en : item.fr;
+            const href = item.id === "projects" ? "/projects" : `/#${item.id}`;
 
             return (
-              <a
+              <Link
                 className={`nav-link ${activeSection === item.id ? "active" : ""}`}
                 data-section={item.id}
-                href={`#${item.id}`}
+                to={href}
                 key={item.id}
                 onClick={() => {
                   setActiveSection(item.id);
@@ -115,7 +117,7 @@ const Header = () => {
                 >
                   {label}
                 </span>
-              </a>
+              </Link>
             );
           })}
         </div>

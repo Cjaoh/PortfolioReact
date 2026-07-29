@@ -32,8 +32,8 @@ const Home = () => {
           </p>
           <AnimatedName />
           <p className="hero-description-shine mt-6 max-w-2xl text-base leading-8 sm:text-lg">
-            Developpeur web passionne par le genie logiciel, les interfaces
-            modernes et les experiences digitales rapides.
+            Développeur web passionné par le génie logiciel, les interfaces
+            modernes et les expériences digitales rapides.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const Home = () => {
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-8">
               <div className="rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent p-8 backdrop-blur-sm">
-                <h3 className="mb-4 text-2xl font-bold text-white">Rabearison Fy Tahina Kevonn</h3>
+                <h3 className="mb-4 text-2xl font-bold text-white">Ratovonanahary Cérick Fernando</h3>
                 <p className="mb-4 text-lg leading-8 text-gray-300">
                   Je suis un développeur web passionné en <span className="text-cyan-300 font-semibold">L3 Génie Logiciel</span>,
                   spécialisé en <span className="text-cyan-300 font-semibold">Full Stack JavaScript</span>.

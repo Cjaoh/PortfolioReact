@@ -1,35 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Briefcase,
-  Code2,
-  Home,
-  Languages,
-  Mail,
-  Rocket,
-  User,
-} from "lucide-react";
+import { Briefcase, Code2, Home, Mail, Rocket, User } from "lucide-react";
 import "../styles/header.css";
 
 const navItems = [
-  { id: "home", en: "Home", fr: "Accueil", icon: Home },
-  { id: "about", en: "About", fr: "À propos", icon: User },
-  { id: "skills", en: "Skills", fr: "Compétences", icon: Code2 },
-  { id: "experience", en: "Experience", fr: "Expérience", icon: Briefcase },
-  { id: "projects", en: "Projects", fr: "Projets", icon: Rocket },
-  { id: "contact", en: "Contact", fr: "Contact", icon: Mail },
+  { id: "home", label: "Accueil", icon: Home },
+  { id: "about", label: "À propos", icon: User },
+  { id: "skills", label: "Compétences", icon: Code2 },
+  { id: "experience", label: "Expérience", icon: Briefcase },
+  { id: "projects", label: "Projets", icon: Rocket },
+  { id: "contact", label: "Contact", icon: Mail },
 ];
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("en");
-  const [theme, setTheme] = useState("dark");
   const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -69,14 +55,6 @@ const Header = () => {
     };
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage((current) => (current === "en" ? "fr" : "en"));
-  };
-
-  const toggleTheme = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
-  };
-
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -95,8 +73,10 @@ const Header = () => {
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`} id="navMenu">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const label = language === "en" ? item.en : item.fr;
-            const href = item.id === "projects" ? "/projects" : `/#${item.id}`;
+            const routedIds = ["skills", "experience", "projects", "contact"];
+            const href = routedIds.includes(item.id)
+              ? `/${item.id}`
+              : `/#${item.id}`;
 
             return (
               <Link
@@ -110,46 +90,13 @@ const Header = () => {
                 }}
               >
                 <Icon aria-hidden="true" size={17} strokeWidth={2.2} />
-                <span
-                  className="nav-text"
-                  data-text-en={item.en}
-                  data-text-fr={item.fr}
-                >
-                  {label}
-                </span>
+                <span className="nav-text">{item.label}</span>
               </Link>
             );
           })}
         </div>
 
         <div className="nav-controls">
-          <button
-            className="lang-toggle"
-            onClick={toggleLanguage}
-            title="Changer la langue"
-            type="button"
-          >
-            <Languages aria-hidden="true" size={17} />
-            <span className="lang-text">{language === "en" ? "FR" : "EN"}</span>
-          </button>
-
-          <button
-            aria-label="Changer le theme"
-            aria-pressed={theme === "light"}
-            className={`theme-toggle lamp-toggle ${theme === "light" ? "is-on" : ""}`}
-            onClick={toggleTheme}
-            title="Changer le theme"
-            type="button"
-          >
-            <span className="lamp-toggle__halo" />
-            <span className="lamp-toggle__glass">
-              <span className="lamp-toggle__filament" />
-            </span>
-            <span className="lamp-toggle__cap" />
-            <span className="lamp-toggle__cord" />
-            <span className="lamp-toggle__knob" />
-          </button>
-
           <button
             aria-expanded={isMenuOpen}
             aria-label="Ouvrir le menu"

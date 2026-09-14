@@ -1,6 +1,5 @@
-
 import { useCallback, useState } from "react";
-import { Code2, Lightbulb, Users, BookOpen } from "lucide-react";
+import { BookOpen, Code2, Database, Server } from "lucide-react";
 import AnimatedName from "../components/AnimatedName";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
@@ -59,12 +58,12 @@ const Home = () => {
               <div className="rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent p-8 backdrop-blur-sm">
                 <h3 className="mb-4 text-2xl font-bold text-white">Ratovonanahary Cérick Fernando</h3>
                 <p className="mb-4 text-lg leading-8 text-gray-300">
-                  Je suis un développeur web passionné en <span className="text-cyan-300 font-semibold">L3 Génie Logiciel</span>,
-                  spécialisé en <span className="text-cyan-300 font-semibold">Full Stack JavaScript</span>.
+                  Étudiant en <span className="text-cyan-300 font-semibold">L3 Génie Logiciel</span>, je conçois des applications
+                  <span className="text-cyan-300 font-semibold"> full stack</span> complètes : du frontend React/Angular
+                  jusqu'au déploiement sur Kubernetes et Google Cloud.
                 </p>
                 <p className="text-lg leading-8 text-gray-300">
-                  Autodidacte par nature, j'aime apprendre continuellement et maîtriser de nouvelles technologies.
-                  Je crois fermement en la collaboration et l'échange d'idées pour créer des solutions innovantes et robustes.
+                  J'apprends vite, je code proprement, et j'aime résoudre des problèmes techniques concrets.
                 </p>
               </div>
 
@@ -72,29 +71,29 @@ const Home = () => {
                 <div className="group relative overflow-hidden rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-6 transition-all hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:via-cyan-500/10 transition-all" />
                   <Code2 className="mb-3 text-cyan-400" size={24} />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Full Stack JS</h4>
-                  <p className="text-sm text-gray-400">React, Node.js, TypeScript et autres frameworks modernes</p>
+                  <h4 className="mb-2 text-lg font-semibold text-white">Frontend Development</h4>
+                  <p className="text-sm text-gray-400">React, Angular, Next.js — interfaces réactives et performantes, du prototype à la production</p>
                 </div>
 
                 <div className="group relative overflow-hidden rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-6 transition-all hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:via-cyan-500/10 transition-all" />
-                  <Lightbulb className="mb-3 text-cyan-400" size={24} />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Autodidacte</h4>
-                  <p className="text-sm text-gray-400">Apprentissage continu et passion pour l'innovation</p>
+                  <Server className="mb-3 text-cyan-400" size={24} />
+                  <h4 className="mb-2 text-lg font-semibold text-white">Backend & API</h4>
+                  <p className="text-sm text-gray-400">Node.js, NestJS, PHP — API REST sécurisées, authentification JWT et logique métier robuste</p>
                 </div>
 
                 <div className="group relative overflow-hidden rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-6 transition-all hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:via-cyan-500/10 transition-all" />
-                  <Users className="mb-3 text-cyan-400" size={24} />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Travail d'équipe</h4>
-                  <p className="text-sm text-gray-400">Collaboration et communication efficace</p>
+                  <Database className="mb-3 text-cyan-400" size={24} />
+                  <h4 className="mb-2 text-lg font-semibold text-white">Bases de Données & Outils</h4>
+                  <p className="text-sm text-gray-400">MongoDB, MySQL, PostgreSQL, Docker, Git — de la modélisation des données au déploiement</p>
                 </div>
 
                 <div className="group relative overflow-hidden rounded-lg border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-6 transition-all hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 group-hover:via-cyan-500/10 transition-all" />
                   <BookOpen className="mb-3 text-cyan-400" size={24} />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Génie Logiciel</h4>
-                  <p className="text-sm text-gray-400">Études approfondies en architecture et design</p>
+                  <h4 className="mb-2 text-lg font-semibold text-white">Architecture & Qualité</h4>
+                  <p className="text-sm text-gray-400">Formation en génie logiciel — conception d'architectures claires et code maintenable</p>
                 </div>
               </div>
             </div>

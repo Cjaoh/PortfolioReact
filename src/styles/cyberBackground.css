@@ -1,413 +1,51 @@
-:root {
-  --primary-grey: #e5e7eb;
-  --primary-orange: #f97316;
-  --primary-purple: #7c3aed;
-  --secondary-amber: #fbbf24;
-  --dark-bg: #1a0b2e;
-  --darker-bg: #0f051a;
-  --card-bg: rgba(229, 231, 235, 0.03);
-  --border-color: rgba(229, 231, 235, 0.2);
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --primary-cyan: #00ffff;
-  --primary-pink: #ff00ff;
-}
-
 .cyber-background {
   position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: var(--darker-bg);
+  background: #09111f;
 }
 
-.cyber-gradient {
+.cyber-background__glow {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 60% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%);
-  animation: gradient-rotate 30s linear infinite;
-  filter: blur(40px);
-}
-
-.matrix-rain {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  overflow: hidden;
-  opacity: 0.36;
-}
-
-.matrix-column {
-  position: absolute;
-  top: -100vh;
-  font-family: "Courier New", monospace;
-  font-size: 20px;
-  color: var(--primary-cyan);
-  text-shadow:
-    0 0 5px var(--primary-cyan),
-    0 0 16px rgba(0, 255, 255, 0.6);
-  animation: matrix-fall linear infinite;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  background: linear-gradient(to bottom, transparent 0%, var(--primary-cyan) 50%, transparent 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-
-
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-}
-
-.grid-lines,
-.grid-glow {
-  position: absolute;
-  inset: 0;
-}
-
-.grid-lines {
-  background-image:
-    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: grid-move 20s linear infinite;
-}
-
-.grid-glow {
-  background-image:
-    linear-gradient(rgba(255, 0, 255, 0.03) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 0, 255, 0.03) 2px, transparent 2px);
-  background-size: 100px 100px;
-  animation: grid-move 30s linear infinite reverse;
-}
-
-.particles {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--primary-cyan);
+  width: min(52rem, 76vw);
+  aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--primary-cyan);
-  animation: particle-float 20s infinite;
-  opacity: 0;
+  filter: blur(90px);
+  opacity: 0.18;
 }
 
-.particle:nth-child(odd) {
-  background: var(--primary-pink);
-  box-shadow: 0 0 10px var(--primary-pink);
+.cyber-background__glow--top {
+  top: -28rem;
+  right: -16rem;
+  background: #0891b2;
 }
 
-.orb-layer {
+.cyber-background__glow--bottom {
+  bottom: -32rem;
+  left: -20rem;
+  background: #4338ca;
+  opacity: 0.12;
+}
+
+.cyber-background__grid {
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
-
-.cyber-orb {
-  --mouse-x: 0px;
-  --mouse-y: 0px;
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: orb-float 20s ease-in-out infinite;
-  transform: translate(var(--mouse-x), var(--mouse-y));
-}
-
-.cyber-orb-1 {
-  width: 300px;
-  height: 300px;
-  background: var(--primary-cyan);
-  top: 10%;
-  left: -150px;
-}
-
-.cyber-orb-2 {
-  width: 400px;
-  height: 400px;
-  background: var(--primary-pink);
-  right: -200px;
-  bottom: 10%;
-  animation-delay: 5s;
-}
-
-.cyber-orb-3 {
-  width: 250px;
-  height: 250px;
-  background: var(--primary-purple);
-  top: 50%;
-  left: 50%;
-  animation-delay: 10s;
-}
-
-.scanlines {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-}
-
-.scanlines::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: linear-gradient(transparent 0%, rgba(0, 255, 255, 0.03) 50%, transparent 100%);
-  background-size: 100% 4px;
-  animation: scanline 8s linear infinite;
-}
-
-.scanlines::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.noise-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 6;
-  opacity: 0.03;
+  opacity: 0.32;
   background-image:
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
-    repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0, 255, 255, 0.02) 2px, rgba(0, 255, 255, 0.02) 4px);
+    linear-gradient(rgba(103, 232, 249, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 232, 249, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
-.data-streams {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  overflow: hidden;
-}
-
-.data-stream {
-  position: absolute;
-  left: -300px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
-  box-shadow: 0 0 16px rgba(0, 255, 255, 0.85);
-  opacity: 0;
-  animation: data-flow 3s ease-in-out infinite;
-}
-
-.data-stream:nth-child(odd) {
-  background: linear-gradient(90deg, transparent, var(--primary-pink), transparent);
-  box-shadow: 0 0 16px rgba(255, 0, 255, 0.8);
-  animation-duration: 4s;
-}
-
-.cursor-glow {
-  --cursor-x: 50vw;
-  --cursor-y: 50vh;
-  position: fixed;
-  top: var(--cursor-y);
-  left: var(--cursor-x);
-  width: 400px;
-  height: 400px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transform: translate(-50%, -50%);
-}
-
-.cyber-signal {
-  position: fixed;
-  z-index: 7;
-  color: var(--primary-cyan);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-shadow: 0 0 10px var(--primary-cyan);
-  opacity: 0.7;
-  animation: cyber-signal-fade 3s ease-out forwards;
-  white-space: nowrap;
-}
-
-@keyframes gradient-rotate {
-  0% {
-    transform: rotate(0deg) scale(1);
+@media (max-width: 640px) {
+  .cyber-background__glow {
+    filter: blur(65px);
   }
 
-  50% {
-    transform: rotate(180deg) scale(1.2);
-  }
-
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
-}
-
-@keyframes matrix-fall {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(200vh);
-  }
-}
-
-@keyframes grid-move {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
-@keyframes particle-float {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh) translateX(0);
-  }
-
-  10%,
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-100vh) translateX(100px);
-  }
-}
-
-@keyframes orb-float {
-  0%,
-  100% {
-    translate: 0 0;
-    scale: 1;
-  }
-
-  33% {
-    translate: 100px -50px;
-    scale: 1.1;
-  }
-
-  66% {
-    translate: -50px 100px;
-    scale: 0.9;
-  }
-}
-
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes data-flow {
-  0% {
-    width: 0;
-    opacity: 0;
-    translate: 0 0;
-  }
-
-  50% {
-    width: min(420px, 70vw);
-    opacity: 1;
-  }
-
-  100% {
-    width: 0;
-    opacity: 0;
-    translate: 100vw 0;
-  }
-}
-
-@keyframes cyber-signal-fade {
-  0% {
-    opacity: 0.7;
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-}
-
-@media (max-width: 768px) {
-  .noise-overlay,
-  .cursor-glow {
-    display: none;
-  }
-
-  .matrix-rain {
-    opacity: 0.28;
-  }
-
-  .matrix-column {
-    font-size: 12px;
-  }
-
-  .data-streams {
-    opacity: 0.8;
-  }
-
-  .particles {
-    opacity: 0.5;
-  }
-
-  .particle {
-    animation-duration: 30s !important;
-  }
-
-  .cyber-orb {
-    filter: blur(100px);
-    opacity: 0.3;
-  }
-
-  .scanlines::before {
-    animation: none;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cyber-gradient,
-  .matrix-column,
-  .grid-lines,
-  .grid-glow,
-  .particle,
-  .cyber-orb,
-  .scanlines::before,
-  .data-stream,
-  .cyber-signal {
-    animation: none;
-  }
-
-  .matrix-column {
-    top: 0;
-    opacity: 0.55;
-  }
-
-  .data-stream {
-    width: min(360px, 70vw);
-    opacity: 0.65;
+  .cyber-background__grid {
+    background-size: 48px 48px;
   }
 }

@@ -9,7 +9,8 @@ const experiences = [
         title: "Examen DevSecOps",
         period: "Projet d'examen",
         description:
-            "Plateforme e-commerce PHP conteneurisée, déployée selon un pipeline GitOps complet : Kubernetes (ReplicaSet, Ingress, NodePort), ArgoCD pour la livraison continue, Tekton pour le pipeline CI, et sécurisation via certificat SSL.",
+            "Mise en place d'une chaîne de livraison GitOps pour une plateforme e-commerce PHP conteneurisée.",
+        outcome: "Pipeline CI avec Tekton, livraison continue par ArgoCD et déploiement Kubernetes sécurisé par SSL.",
         tags: ["Kubernetes", "ArgoCD", "Tekton", "GitOps", "Docker"],
         github: "https://github.com/Cjaoh/EXAMDEVSECOPS",
     },
@@ -19,7 +20,8 @@ const experiences = [
         title: "TechShop",
         period: "Projet personnel",
         description:
-            "Plateforme e-commerce moderne construite avec Angular 16 et les Signals, connectée à FakeStoreAPI. Déployée en production sur Kubernetes avec ArgoCD, Ingress sécurisé par certificat SSL et 4 replicas Docker.",
+            "Plateforme e-commerce construite avec Angular 16 et les Signals, connectée à FakeStoreAPI.",
+        outcome: "Déploiement Kubernetes avec ArgoCD, Ingress SSL et 4 replicas Docker.",
         tags: ["Angular 16", "Signals", "TailwindCSS", "Kubernetes"],
         github: "https://github.com/Cjaoh/Techshop",
     },
@@ -29,7 +31,8 @@ const experiences = [
         title: "Gestion Hôtelière",
         period: "Projet universitaire — L3 Génie Logiciel",
         description:
-            "Application full stack de gestion hôtelière en MEVN : réservations avec vérification de disponibilité multi-niveaux, facturation automatique, authentification JWT avec rôles (admin / accueil), et gestion de 80 chambres réparties par catégorie.",
+            "Application MEVN conçue pour centraliser les réservations, la disponibilité et la facturation d'un hôtel.",
+        outcome: "Gestion de 80 chambres, facturation automatique et accès JWT séparés pour l'administration et l'accueil.",
         tags: ["MongoDB", "Express", "Vue.js", "Node.js", "JWT"],
         github: "https://github.com/Cjaoh/getstion-hotel-",
     },
@@ -39,7 +42,8 @@ const experiences = [
         title: "E-sitrana",
         period: "Travaux pratiques — Cloud",
         description:
-            "Application web de clinique médicale en PHP/MySQL, déployée sur Google Cloud Run avec Cloud SQL, Artifact Registry et Cloud Build pour l'intégration continue.",
+            "Application PHP/MySQL de clinique médicale, conçue pour pratiquer le déploiement applicatif sur Google Cloud.",
+        outcome: "Déploiement avec Cloud Run et Cloud SQL, intégration continue via Cloud Build et Artifact Registry.",
         tags: ["PHP", "MySQL", "Google Cloud Run", "CI/CD"],
         github: null,
     },
@@ -47,7 +51,7 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <main className="relative min-h-screen overflow-hidden text-white">
+        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
             <CyberBackground />
             <Header />
 
@@ -58,14 +62,14 @@ const Experience = () => {
                 <div className="mx-auto max-w-5xl">
                     <div className="mb-16 text-center">
                         <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-                            Mon Parcours
+                            Réalisations sélectionnées
                         </p>
                         <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-                            Mon <span className="text-cyan-300">Expérience</span>
+                            Projets <span className="text-cyan-300">académiques & personnels</span>
                         </h2>
                         <p className="mx-auto max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
-                            Une sélection de projets concrets, du développement full stack
-                            au déploiement en production.
+                            Des réalisations concrètes qui montrent mon approche du développement,
+                            de la conception d&apos;une application à sa mise en production.
                         </p>
                     </div>
 
@@ -74,7 +78,7 @@ const Experience = () => {
                             const Icon = exp.icon;
                             return (
                                 <div key={exp.id} className="relative">
-                                    <span className="absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400/50 bg-[#0f051a] sm:-left-[49px]">
+                                    <span className="absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400/50 bg-[#09111f] sm:-left-[49px]">
                                         <Icon className="text-cyan-300" size={13} />
                                     </span>
 
@@ -88,6 +92,14 @@ const Experience = () => {
                                         <p className="mb-5 text-sm leading-relaxed text-gray-300">
                                             {exp.description}
                                         </p>
+                                        <div className="mb-5 border-l-2 border-cyan-400/60 pl-4">
+                                            <p className="text-xs font-semibold uppercase tracking-wider text-cyan-200">
+                                                Résultat clé
+                                            </p>
+                                            <p className="mt-1 text-sm leading-relaxed text-slate-200">
+                                                {exp.outcome}
+                                            </p>
+                                        </div>
 
                                         <div className="mb-5 flex flex-wrap gap-2">
                                             {exp.tags.map((tag) => (

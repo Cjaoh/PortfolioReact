@@ -45,13 +45,13 @@ const skillGroups = [
     {
         title: "Outils",
         icon: Wrench,
-        items: ["Git / GitHub", "Linux", "Postman", "VS Code"],
+        items: ["Git / GitHub", "Linux", "Postman", "VS Code", "Figma"],
     },
 ];
 
 const Skills = () => {
     return (
-        <main className="relative min-h-screen overflow-hidden text-white">
+        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
             <CyberBackground />
             <Header />
 

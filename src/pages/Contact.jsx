@@ -1,10 +1,15 @@
-import { Copy, Github, Mail } from "lucide-react";
+import { Copy, Github, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import { FaFacebookF } from "react-icons/fa";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
 
 const EMAIL = "cedratovonanahary@gmail.com";
 const GITHUB_URL = "https://github.com/Cjaoh";
+const FACEBOOK_URL = "https://www.facebook.com/ced.jaoh";
+const PHONE_DISPLAY = "034 32 755 45";
+const PHONE_URL = "tel:+261343275545";
+const LOCATION = "Antananarivo, Madagascar";
 
 const Contact = () => {
     const [copied, setCopied] = useState(false);
@@ -21,7 +26,7 @@ const Contact = () => {
     };
 
     return (
-        <main className="relative min-h-screen overflow-hidden text-white">
+        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
             <CyberBackground />
             <Header />
 
@@ -38,13 +43,13 @@ const Contact = () => {
                             Me <span className="text-cyan-300">Contacter</span>
                         </h2>
                         <p className="mx-auto max-w-xl text-base leading-7 text-gray-300 sm:text-lg">
-                            Une question, une opportunité, un projet à discuter ? N'hésitez
-                            pas à me contacter directement.
+                            Basé à Antananarivo, Madagascar. Pour une opportunité ou un
+                            projet à discuter, contactez-moi directement.
                         </p>
                     </div>
 
                     <div className="grid gap-6 sm:grid-cols-2">
-                        <div className="group relative overflow-hidden rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-slate-900/60 to-transparent p-8 backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/20">
+                        <div className="group relative overflow-hidden rounded-xl border border-cyan-400/40 bg-gradient-to-br from-cyan-500/20 via-slate-900/60 to-transparent p-8 backdrop-blur-md transition-all duration-300 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/20">
                             <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
                                 <Mail className="text-cyan-300" size={22} />
                             </span>
@@ -79,10 +84,50 @@ const Contact = () => {
                                 href={GITHUB_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 px-5 py-2 text-sm font-semibold text-gray-300 transition-all hover:border-cyan-400 hover:text-white"
+                                className="inline-flex items-center gap-1.5 rounded-full bg-cyan-400 px-5 py-2 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-300"
                             >
-                                <Github size={16} /> Voir le profil
+                                <Github size={16} /> Consulter mes dépôts
                             </a>
+                        </div>
+
+                        <div className="relative overflow-hidden rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-slate-900/60 to-transparent p-8 backdrop-blur-md sm:col-span-2">
+                            <div className="grid gap-8 sm:grid-cols-2">
+                                <div>
+                                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                                        <Phone className="text-cyan-300" size={22} />
+                                    </span>
+                                    <h3 className="mb-2 text-lg font-bold text-white">Téléphone</h3>
+                                    <a
+                                        href={PHONE_URL}
+                                        className="text-sm text-gray-300 transition-colors hover:text-cyan-300"
+                                    >
+                                        {PHONE_DISPLAY}
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                                        <MapPin className="text-cyan-300" size={22} />
+                                    </span>
+                                    <h3 className="mb-2 text-lg font-bold text-white">Localisation</h3>
+                                    <p className="text-sm text-gray-300">{LOCATION}</p>
+                                </div>
+
+                                <div>
+                                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                                        <FaFacebookF className="text-cyan-300" size={20} aria-hidden="true" />
+                                    </span>
+                                    <h3 className="mb-2 text-lg font-bold text-white">Facebook</h3>
+                                    <a
+                                        href={FACEBOOK_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sm text-gray-300 transition-colors hover:text-cyan-300"
+                                    >
+                                        Ced Jaoh
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,57 +1,87 @@
-import React, { useState } from "react";
-import { ExternalLink, Github, FolderGit2, Code, Layers, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Github, FolderGit2, Code, Sparkles, UserRound } from "lucide-react";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
 
-// Données démo pour les projets (modifiables facilement)
-const initialProjects = [
+const projects = [
   {
     id: 1,
-    title: "E-Commerce CyberStore",
+    title: "TechShop",
     category: "Full Stack",
     description:
-      "Plateforme de commerce électronique moderne avec panier en temps réel, paiement sécurisé et interface utilisateur cyberpunk.",
-    tags: ["React", "Node.js", "TailwindCSS", "MongoDB"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Une plateforme e-commerce conçue pour proposer une expérience d'achat fluide tout en validant un déploiement applicatif moderne sur Kubernetes.",
+    role: "Développement et déploiement de l'application de bout en bout.",
+    features: [
+      "Interface Angular 16 réactive basée sur les Signals",
+      "Catalogue connecté à FakeStoreAPI",
+      "Déploiement Kubernetes avec ArgoCD, Ingress SSL et 4 replicas Docker",
+    ],
+    tags: ["Angular 16", "Signals", "TailwindCSS", "Kubernetes", "ArgoCD"],
+    github: "https://github.com/Cjaoh/Techshop",
     featured: true,
   },
   {
     id: 2,
-    title: "Application Gestion de Tâches",
-    category: "Frontend",
+    title: "Plateforme e-commerce DevSecOps",
+    category: "DevOps",
     description:
-      "Dashboard interactif pour la gestion de projets et suivi de productivité avec animations fluides.",
-    tags: ["React", "TypeScript", "TailwindCSS"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Projet d'examen démontrant la mise en place d'une chaîne de livraison GitOps complète pour une application e-commerce PHP.",
+    role: "Conception de l'infrastructure, du pipeline CI/CD et du déploiement sécurisé.",
+    features: [
+      "Conteneurisation de l'application PHP avec Docker",
+      "Pipeline CI avec Tekton et livraison continue avec ArgoCD",
+      "Déploiement Kubernetes avec ReplicaSet, Ingress, NodePort et SSL",
+    ],
+    tags: ["PHP", "Docker", "Kubernetes", "Tekton", "ArgoCD", "GitOps"],
+    github: "https://github.com/Cjaoh/EXAMDEVSECOPS",
     featured: false,
   },
   {
     id: 3,
-    title: "API Rest & Authentification",
-    category: "Backend",
+    title: "Gestion hôtelière",
+    category: "Full Stack",
     description:
-      "Architecture API robuste avec authentification JWT, gestion des rôles et documentation Swagger.",
-    tags: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Application universitaire de gestion hôtelière, créée pour centraliser les réservations, la disponibilité des chambres et la facturation.",
+    role: "Développement full stack de l'application et de la logique métier.",
+    features: [
+      "Réservations avec contrôle de disponibilité à plusieurs niveaux",
+      "Facturation automatique et gestion de 80 chambres par catégorie",
+      "Authentification JWT et accès différenciés admin / accueil",
+    ],
+    tags: ["MongoDB", "Express", "Vue.js", "Node.js", "JWT"],
+    github: "https://github.com/Cjaoh/getstion-hotel-",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "E-sitrana",
+    category: "Cloud",
+    description:
+      "Application de clinique médicale réalisée pour mettre en pratique la conception d'une application web et son déploiement sur Google Cloud.",
+    role: "Développement de l'application et mise en place de la chaîne de déploiement cloud.",
+    features: [
+      "Application PHP connectée à une base de données MySQL",
+      "Déploiement sur Google Cloud Run avec Cloud SQL",
+      "Intégration continue avec Cloud Build et Artifact Registry",
+    ],
+    tags: ["PHP", "MySQL", "Google Cloud Run", "Cloud SQL", "Cloud Build"],
+    github: null,
     featured: false,
   },
 ];
 
-const categories = ["Tous", "Full Stack", "Frontend", "Backend"];
+const categories = ["Tous", "Full Stack", "DevOps", "Cloud"];
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Tous");
 
   const filteredProjects =
     selectedCategory === "Tous"
-      ? initialProjects
-      : initialProjects.filter((project) => project.category === selectedCategory);
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <main className="relative min-h-screen overflow-hidden text-white">
+    <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
       <CyberBackground />
       <Header />
 
@@ -66,7 +96,8 @@ const Projects = () => {
               Mes <span className="text-cyan-300">Projets</span>
             </h2>
             <p className="mx-auto max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
-              Découvrez une sélection de mes travaux récents, combinant design moderne, performance et génie logiciel.
+              Des projets concrets qui illustrent mon approche : résoudre un besoin,
+              développer une solution maintenable et la rendre déployable.
             </p>
           </div>
 
@@ -76,6 +107,7 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
+                aria-pressed={selectedCategory === category}
                 className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
                   selectedCategory === category
                     ? "bg-cyan-500 text-black shadow-lg shadow-cyan-500/30 scale-105"
@@ -88,7 +120,7 @@ const Projects = () => {
           </div>
 
           {/* Grille de Projets */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
@@ -112,9 +144,28 @@ const Projects = () => {
                     {project.title}
                   </h3>
 
-                  <p className="mb-6 text-sm leading-relaxed text-gray-300">
-                    {project.description}
-                  </p>
+                  <div className="mb-4">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
+                      Étude de cas — le besoin
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="mb-5 rounded-lg border border-cyan-500/15 bg-slate-950/30 p-3">
+                    <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-200">
+                      <UserRound size={14} aria-hidden="true" /> Mon rôle
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-300">{project.role}</p>
+                  </div>
+                  <ul className="mb-6 space-y-2 text-sm leading-relaxed text-gray-300">
+                    {project.features.map((feature) => (
+                      <li className="flex gap-2" key={feature}>
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <div>
@@ -132,22 +183,18 @@ const Projects = () => {
 
                   {/* Liens du Projet */}
                   <div className="flex items-center gap-4 pt-4 border-t border-cyan-500/10">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-semibold text-gray-300 hover:text-cyan-300 transition-colors"
-                    >
-                      <Github size={16} /> Code Source
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors ml-auto"
-                    >
-                      <ExternalLink size={16} /> Démo
-                    </a>
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-sm font-semibold text-gray-300 hover:text-cyan-300 transition-colors"
+                      >
+                        <Github size={16} /> Voir le code source
+                      </a>
+                    ) : (
+                      <p className="text-sm text-gray-400">Dépôt non public</p>
+                    )}
                   </div>
                 </div>
               </div>

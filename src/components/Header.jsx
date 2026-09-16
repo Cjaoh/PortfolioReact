@@ -7,7 +7,7 @@ const navItems = [
   { id: "home", label: "Accueil", icon: Home },
   { id: "about", label: "À propos", icon: User },
   { id: "skills", label: "Compétences", icon: Code2 },
-  { id: "experience", label: "Expérience", icon: Briefcase },
+  { id: "experience", label: "Réalisations", icon: Briefcase },
   { id: "projects", label: "Projets", icon: Rocket },
   { id: "contact", label: "Contact", icon: Mail },
 ];
@@ -99,7 +99,7 @@ const Header = () => {
         <div className="nav-controls">
           <button
             aria-expanded={isMenuOpen}
-            aria-label="Ouvrir le menu"
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
             onClick={() => setIsMenuOpen((current) => !current)}
             title="Toggle Menu"

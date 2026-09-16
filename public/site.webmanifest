@@ -1,0 +1,15 @@
+{
+  "name": "Cérick Ratovonanahary | Développeur Full Stack & DevOps",
+  "short_name": "Cérick Ratovonanahary",
+  "lang": "fr",
+  "display": "standalone",
+  "background_color": "#09111f",
+  "theme_color": "#09111f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

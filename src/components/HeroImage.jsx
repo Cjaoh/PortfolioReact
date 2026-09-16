@@ -5,19 +5,19 @@ const badges = [
   {
     className: "badge-1",
     icon: FaLaptopCode,
-    title: "Dev Web",
-    libs: "React, Node.js",
+    title: "Développement web",
+    libs: "React, Angular, Node.js",
   },
   {
     className: "badge-2",
     icon: FaMobileAlt,
-    title: "Dev Mobile",
-    libs: "React Native",
+    title: "Développement mobile",
+    libs: "Flutter",
   },
   {
     className: "badge-3",
     icon: FaFigma,
-    title: "Designer UI",
+    title: "Conception d'interface",
     libs: "Figma, Tailwind",
   },
 ];
@@ -31,9 +31,12 @@ const HeroImage = () => {
         <div className="profile-image-frame">
           <div className="profile-image" id="profileImage">
             <img
-              alt="Ratovonanahary Cérick Fernando"
+              alt="RATOVONANAHARY Cédrick Fernando"
               className="profile-photo"
               src="/images/pdp2.png"
+              width="435"
+              height="493"
+              fetchPriority="high"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}

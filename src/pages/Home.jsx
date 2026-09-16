@@ -15,20 +15,22 @@ const Home = () => (
         id="home"
       >
         <div className="max-w-4xl">
-          <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-            Développeur Full Stack & DevOps junior
-          </p>
           <AnimatedName />
-          <p className="hero-description-shine mt-6 max-w-2xl text-base leading-8 sm:text-lg">
-            Je conçois des applications web fiables, de l&apos;interface utilisateur
-            au déploiement automatisé sur le cloud.
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
+            Je conçois des applications web complètes, du frontend au backend. Je m&apos;intéresse
+            au déploiement cloud, que j&apos;ai commencé à explorer sur mes projets personnels et académiques.
           </p>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-            Je recherche une opportunité junior, de stage ou d&apos;alternance pour
-            contribuer à des produits concrets avec React, Angular, Node.js,
-            Docker, Kubernetes et Google Cloud.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-5 flex flex-wrap gap-2.5" aria-label="Technologies">
+            {["React", "Angular", "Node.js", "NestJS", "Flutter", "Docker", "Kubernetes"].map((technology) => (
+              <span
+                className="rounded-full border border-cyan-400/50 bg-cyan-400/10 px-3 py-1.5 text-sm font-semibold text-cyan-100"
+                key={technology}
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
             <Link
               to="/projects"
               className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-[#0f051a]"

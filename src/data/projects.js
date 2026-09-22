@@ -1,0 +1,85 @@
+export const projects = [
+  {
+    id: "techshop",
+    title: "TechShop",
+    category: "Full Stack",
+    period: "Projet personnel",
+    description:
+      "Plateforme e-commerce conçue pour proposer une expérience d'achat fluide tout en validant un déploiement applicatif moderne sur Kubernetes.",
+    role: "Développement et déploiement de l'application de bout en bout.",
+    features: [
+      "Interface Angular 16 réactive basée sur les Signals",
+      "Catalogue connecté à FakeStoreAPI",
+      "Déploiement Kubernetes avec ArgoCD, Ingress SSL et 4 replicas Docker",
+    ],
+    outcome: "Déploiement Kubernetes avec ArgoCD, Ingress SSL et 4 replicas Docker.",
+    tags: ["Angular 16", "Signals", "TailwindCSS", "Kubernetes", "ArgoCD"],
+    github: "https://github.com/Cjaoh/Techshop",
+    demo: null,
+    image: null,
+    featured: true,
+  },
+  {
+    id: "devsecops",
+    title: "Plateforme e-commerce DevSecOps",
+    shortTitle: "Examen DevSecOps",
+    category: "DevOps",
+    period: "Projet d'examen",
+    description:
+      "Projet d'examen démontrant la mise en place d'une chaîne de livraison GitOps complète pour une application e-commerce PHP.",
+    role: "Conception de l'infrastructure, du pipeline CI/CD et du déploiement sécurisé.",
+    features: [
+      "Conteneurisation de l'application PHP avec Docker",
+      "Pipeline CI avec Tekton et livraison continue avec ArgoCD",
+      "Déploiement Kubernetes avec ReplicaSet, Ingress, NodePort et SSL",
+    ],
+    outcome: "Pipeline CI avec Tekton, livraison continue par ArgoCD et déploiement Kubernetes sécurisé par SSL.",
+    tags: ["PHP", "Docker", "Kubernetes", "Tekton", "ArgoCD", "GitOps"],
+    github: "https://github.com/Cjaoh/EXAMDEVSECOPS",
+    demo: null,
+    image: null,
+    featured: false,
+  },
+  {
+    id: "hotel",
+    title: "Gestion hôtelière",
+    category: "Full Stack",
+    period: "Projet universitaire — L3 Génie logiciel",
+    description:
+      "Application universitaire de gestion hôtelière, créée pour centraliser les réservations, la disponibilité des chambres et la facturation.",
+    role: "Développement full stack de l'application et de la logique métier.",
+    features: [
+      "Réservations avec contrôle de disponibilité à plusieurs niveaux",
+      "Facturation automatique et gestion de 80 chambres par catégorie",
+      "Authentification JWT et accès différenciés administration / accueil",
+    ],
+    outcome: "Gestion de 80 chambres, facturation automatique et accès JWT séparés pour l'administration et l'accueil.",
+    tags: ["MongoDB", "Express", "Vue.js", "Node.js", "JWT"],
+    github: "https://github.com/Cjaoh/getstion-hotel-",
+    demo: null,
+    image: null,
+    featured: false,
+  },
+  {
+    id: "esitrana",
+    title: "E-sitrana",
+    category: "Cloud",
+    period: "Travaux pratiques — Cloud",
+    description:
+      "Application de clinique médicale réalisée pour mettre en pratique la conception d'une application web et son déploiement sur Google Cloud.",
+    role: "Développement de l'application et mise en place de la chaîne de déploiement cloud.",
+    features: [
+      "Application PHP connectée à une base de données MySQL",
+      "Déploiement sur Google Cloud Run avec Cloud SQL",
+      "Intégration continue avec Cloud Build et Artifact Registry",
+    ],
+    outcome: "Déploiement avec Cloud Run et Cloud SQL, intégration continue via Cloud Build et Artifact Registry.",
+    tags: ["PHP", "MySQL", "Google Cloud Run", "Cloud SQL", "Cloud Build"],
+    github: null,
+    demo: null,
+    image: null,
+    featured: false,
+  },
+];
+
+export const projectCategories = ["Tous", "Full Stack", "DevOps", "Cloud"];

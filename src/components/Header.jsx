@@ -102,7 +102,7 @@ const Header = () => {
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
             onClick={() => setIsMenuOpen((current) => !current)}
-            title="Toggle Menu"
+            title={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             type="button"
           >
             <span />

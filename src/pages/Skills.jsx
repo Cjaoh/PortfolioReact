@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
+import Seo from "../components/Seo";
 
 const skillGroups = [
     {
@@ -52,6 +53,7 @@ const skillGroups = [
 const Skills = () => {
     return (
         <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
+            <Seo title="Compétences" description="Compétences techniques pratiquées dans les projets de Cédrick Ratovonanahary." />
             <CyberBackground />
             <Header />
 
@@ -64,12 +66,12 @@ const Skills = () => {
                         <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
                             Mon Arsenal
                         </p>
-                        <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
+                        <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
                             Mes <span className="text-cyan-300">Compétences</span>
-                        </h2>
+                        </h1>
                         <p className="mx-auto max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
-                            Technologies que je maîtrise et utilise au quotidien dans mes
-                            projets full stack, du développement à la mise en production.
+                            Technologies pratiquées dans mes projets full stack, du
+                            développement au déploiement. Je continue à les approfondir.
                         </p>
                     </div>
 

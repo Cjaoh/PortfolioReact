@@ -1,57 +1,16 @@
 import { Github, GraduationCap, ShieldCheck, ShoppingCart, Hotel } from "lucide-react";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
+import Seo from "../components/Seo";
+import { projects } from "../data/projects";
 
-const experiences = [
-    {
-        id: 1,
-        icon: ShieldCheck,
-        title: "Examen DevSecOps",
-        period: "Projet d'examen",
-        description:
-            "Mise en place d'une chaîne de livraison GitOps pour une plateforme e-commerce PHP conteneurisée.",
-        outcome: "Pipeline CI avec Tekton, livraison continue par ArgoCD et déploiement Kubernetes sécurisé par SSL.",
-        tags: ["Kubernetes", "ArgoCD", "Tekton", "GitOps", "Docker"],
-        github: "https://github.com/Cjaoh/EXAMDEVSECOPS",
-    },
-    {
-        id: 2,
-        icon: ShoppingCart,
-        title: "TechShop",
-        period: "Projet personnel",
-        description:
-            "Plateforme e-commerce construite avec Angular 16 et les Signals, connectée à FakeStoreAPI.",
-        outcome: "Déploiement Kubernetes avec ArgoCD, Ingress SSL et 4 replicas Docker.",
-        tags: ["Angular 16", "Signals", "TailwindCSS", "Kubernetes"],
-        github: "https://github.com/Cjaoh/Techshop",
-    },
-    {
-        id: 3,
-        icon: Hotel,
-        title: "Gestion Hôtelière",
-        period: "Projet universitaire — L3 Génie Logiciel",
-        description:
-            "Application MEVN conçue pour centraliser les réservations, la disponibilité et la facturation d'un hôtel.",
-        outcome: "Gestion de 80 chambres, facturation automatique et accès JWT séparés pour l'administration et l'accueil.",
-        tags: ["MongoDB", "Express", "Vue.js", "Node.js", "JWT"],
-        github: "https://github.com/Cjaoh/getstion-hotel-",
-    },
-    {
-        id: 4,
-        icon: GraduationCap,
-        title: "E-sitrana",
-        period: "Travaux pratiques — Cloud",
-        description:
-            "Application PHP/MySQL de clinique médicale, conçue pour pratiquer le déploiement applicatif sur Google Cloud.",
-        outcome: "Déploiement avec Cloud Run et Cloud SQL, intégration continue via Cloud Build et Artifact Registry.",
-        tags: ["PHP", "MySQL", "Google Cloud Run", "CI/CD"],
-        github: null,
-    },
-];
+const icons = [ShieldCheck, ShoppingCart, Hotel, GraduationCap];
+const experiences = projects.map((project, index) => ({ ...project, icon: icons[index] }));
 
 const Experience = () => {
     return (
         <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
+            <Seo title="Parcours" description="Parcours académique et projets personnels de Cédrick Ratovonanahary." />
             <CyberBackground />
             <Header />
 
@@ -64,9 +23,9 @@ const Experience = () => {
                         <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
                             Réalisations sélectionnées
                         </p>
-                        <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-                            Projets <span className="text-cyan-300">académiques & personnels</span>
-                        </h2>
+                        <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
+                            Parcours <span className="text-cyan-300">académique & personnel</span>
+                        </h1>
                         <p className="mx-auto max-w-2xl text-base leading-7 text-gray-300 sm:text-lg">
                             Des réalisations concrètes qui montrent mon approche du développement,
                             de la conception d&apos;une application à sa mise en production.

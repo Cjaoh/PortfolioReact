@@ -1,12 +1,31 @@
-# React + Vite
+# Portfolio de Cédrick Ratovonanahary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio React/Vite présentant mes projets full stack, DevOps et cloud.
 
-Currently, two official plugins are available:
+## Démarrer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Avant publication :
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run lint
+npm run build
+```
+
+## Ajouter un projet
+
+Les projets sont centralisés dans `src/data/projects.js`. Ajoute un objet au même format : il apparaîtra automatiquement dans les pages **Projets** et **Parcours**.
+
+- `github` : URL du dépôt, ou `null` ;
+- `demo` : URL de démonstration, ou `null` ;
+- `image` : chemin de capture, par exemple `/images/projects/techshop.webp`, ou `null` pour garder l'emplacement réservé.
+
+Place les captures dans `public/images/projects/`, idéalement en WebP et avec une largeur d'environ 1600 px.
+
+## Ajouter LinkedIn
+
+Dans `src/pages/Contact.jsx`, remplace `const LINKEDIN_URL = null` par l'URL complète du profil. Le lien sera activé automatiquement.

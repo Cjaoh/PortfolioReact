@@ -1,8 +1,9 @@
-import { Copy, Github, Mail, MapPin, Phone } from "lucide-react";
+import { Copy, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { FaFacebookF } from "react-icons/fa";
 import CyberBackground from "../components/CyberBackground";
 import Header from "../components/Header";
+import Seo from "../components/Seo";
 
 const EMAIL = "cedratovonanahary@gmail.com";
 const GITHUB_URL = "https://github.com/Cjaoh";
@@ -10,6 +11,7 @@ const FACEBOOK_URL = "https://www.facebook.com/ced.jaoh";
 const PHONE_DISPLAY = "034 32 755 45";
 const PHONE_URL = "tel:+261343275545";
 const LOCATION = "Antananarivo, Madagascar";
+const LINKEDIN_URL = null;
 
 const Contact = () => {
     const [copied, setCopied] = useState(false);
@@ -27,6 +29,7 @@ const Contact = () => {
 
     return (
         <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
+            <Seo title="Contact" description="Contacter Cédrick Ratovonanahary pour une alternance, un stage ou un projet." />
             <CyberBackground />
             <Header />
 
@@ -39,9 +42,9 @@ const Contact = () => {
                         <p className="mb-4 font-mono text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
                             Parlons-en
                         </p>
-                        <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
+                        <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
                             Me <span className="text-cyan-300">Contacter</span>
-                        </h2>
+                        </h1>
                         <p className="mx-auto max-w-xl text-base leading-7 text-gray-300 sm:text-lg">
                             Basé à Antananarivo, Madagascar. Pour une opportunité ou un
                             projet à discuter, contactez-moi directement.
@@ -126,6 +129,18 @@ const Contact = () => {
                                     >
                                         Ced Jaoh
                                     </a>
+                                </div>
+
+                                <div>
+                                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                                        <Linkedin className="text-cyan-300" size={22} aria-hidden="true" />
+                                    </span>
+                                    <h3 className="mb-2 text-lg font-bold text-white">LinkedIn</h3>
+                                    {LINKEDIN_URL ? (
+                                        <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 transition-colors hover:text-cyan-300">Voir mon profil</a>
+                                    ) : (
+                                        <p className="text-sm text-gray-400">Profil bientôt disponible</p>
+                                    )}
                                 </div>
                             </div>
                         </div>

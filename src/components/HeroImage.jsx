@@ -1,4 +1,5 @@
 import { FaFigma, FaLaptopCode, FaMobileAlt } from "react-icons/fa";
+import { useState } from "react";
 import "../styles/heroImage.css";
 
 const badges = [
@@ -23,6 +24,8 @@ const badges = [
 ];
 
 const HeroImage = () => {
+  const [imageUnavailable, setImageUnavailable] = useState(false);
+
   return (
     <div className="hero-image-wrapper">
       <div className="hero-image-container">
@@ -30,17 +33,18 @@ const HeroImage = () => {
 
         <div className="profile-image-frame">
           <div className="profile-image" id="profileImage">
-            <img
+            {imageUnavailable ? (
+              <span className="profile-fallback" aria-label="Cédrick Ratovonanahary">CR</span>
+            ) : <img
               alt="RATOVONANAHARY Cédrick Fernando"
               className="profile-photo"
               src="/images/pdp2.png"
               width="435"
               height="493"
               fetchPriority="high"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
+              onError={() => setImageUnavailable(true)}
             />
+            }
           </div>
         </div>
 

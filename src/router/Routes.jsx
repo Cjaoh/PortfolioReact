@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
+import ScrollToHash from "./ScrollToHash";
 
 const Projects = lazy(() => import("../pages/Projects"));
 const Skills = lazy(() => import("../pages/Skills"));
@@ -17,6 +18,7 @@ const PageLoader = () => (
 const AppRoutes = () => {
   return (
     <Router>
+      <ScrollToHash />
       <a className="skip-link" href="#main-content">Aller au contenu principal</a>
       <Suspense fallback={<PageLoader />}>
         <Routes>

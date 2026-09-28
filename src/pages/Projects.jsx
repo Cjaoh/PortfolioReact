@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Code, ExternalLink, FolderGit2, Github, Image as ImageIcon, Sparkles, UserRound } from "lucide-react";
-import CyberBackground from "../components/CyberBackground";
-import Header from "../components/Header";
-import Seo from "../components/Seo";
+import PageLayout from "../components/PageLayout";
 import { projectCategories, projects } from "../data/projects";
 
 const Projects = () => {
@@ -10,10 +8,7 @@ const Projects = () => {
   const filteredProjects = selectedCategory === "Tous" ? projects : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
-      <Seo title="Projets" description="Projets full stack, DevOps et cloud réalisés par Cédrick Ratovonanahary." />
-      <CyberBackground />
-      <Header />
+    <PageLayout title="Projets" description="Projets full stack, DevOps et cloud réalisés par Cédrick Ratovonanahary.">
       <section className="relative z-10 px-6 pb-20 pt-32 sm:px-10 lg:px-20" id="projects">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
@@ -53,7 +48,7 @@ const Projects = () => {
           </div>
         </div>
       </section>
-    </main>
+    </PageLayout>
   );
 };
 

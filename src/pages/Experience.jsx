@@ -1,7 +1,5 @@
 import { Github, GraduationCap, ShieldCheck, ShoppingCart, Hotel } from "lucide-react";
-import CyberBackground from "../components/CyberBackground";
-import Header from "../components/Header";
-import Seo from "../components/Seo";
+import PageLayout from "../components/PageLayout";
 import { projects } from "../data/projects";
 
 const icons = [ShieldCheck, ShoppingCart, Hotel, GraduationCap];
@@ -9,11 +7,7 @@ const experiences = projects.map((project, index) => ({ ...project, icon: icons[
 
 const Experience = () => {
     return (
-        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
-            <Seo title="Parcours" description="Parcours académique et projets personnels de Cédrick Ratovonanahary." />
-            <CyberBackground />
-            <Header />
-
+        <PageLayout title="Parcours" description="Parcours académique et projets personnels de Cédrick Ratovonanahary.">
             <section
                 className="relative z-10 px-6 pb-20 pt-32 sm:px-10 lg:px-20"
                 id="experience"
@@ -88,7 +82,7 @@ const Experience = () => {
                     </div>
                 </div>
             </section>
-        </main>
+        </PageLayout>
     );
 };
 

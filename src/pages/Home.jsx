@@ -1,17 +1,11 @@
 import { ArrowRight, BookOpen, Code2, Database, Mail, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedName from "../components/AnimatedName";
-import CyberBackground from "../components/CyberBackground";
-import Header from "../components/Header";
 import HeroImage from "../components/HeroImage";
-import Seo from "../components/Seo";
+import PageLayout from "../components/PageLayout";
 
 const Home = () => (
-    <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
-      <Seo title="Développeur full stack junior" />
-      <CyberBackground />
-      <Header />
-
+    <PageLayout title="Développeur full stack junior" description="Développeur full stack junior passionné par les technologies web.">
       <section
         className="relative z-10 grid min-h-screen items-center gap-12 px-6 pb-20 pt-32 sm:px-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:px-20"
         id="home"
@@ -35,13 +29,13 @@ const Home = () => (
           <div className="mt-6 flex flex-wrap gap-4">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-[#0f051a]"
+              className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#09111f]"
             >
               Voir mes projets <ArrowRight size={17} aria-hidden="true" />
             </Link>
             <a
               href="mailto:cedratovonanahary@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/50 px-6 py-3 text-sm font-bold text-white transition hover:border-cyan-300 hover:bg-cyan-400/10 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-[#0f051a]"
+              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/50 px-6 py-3 text-sm font-bold text-white transition hover:border-cyan-300 hover:bg-cyan-400/10 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#09111f]"
             >
               Me contacter <Mail size={17} aria-hidden="true" />
             </a>
@@ -156,7 +150,7 @@ const Home = () => (
           </div>
         </div>
       </section>
-    </main>
+    </PageLayout>
 );
 
 export default Home;

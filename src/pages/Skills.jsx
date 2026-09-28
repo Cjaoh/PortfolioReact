@@ -6,9 +6,7 @@ import {
     Smartphone,
     Wrench,
 } from "lucide-react";
-import CyberBackground from "../components/CyberBackground";
-import Header from "../components/Header";
-import Seo from "../components/Seo";
+import PageLayout from "../components/PageLayout";
 
 const skillGroups = [
     {
@@ -52,10 +50,7 @@ const skillGroups = [
 
 const Skills = () => {
     return (
-        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
-            <Seo title="Compétences" description="Compétences techniques pratiquées dans les projets de Cédrick Ratovonanahary." />
-            <CyberBackground />
-            <Header />
+        <PageLayout title="Compétences" description="Compétences techniques pratiquées dans les projets de Cédrick Ratovonanahary.">
 
             <section
                 className="relative z-10 px-6 pb-20 pt-32 sm:px-10 lg:px-20"
@@ -108,7 +103,7 @@ const Skills = () => {
                     </div>
                 </div>
             </section>
-        </main>
+        </PageLayout>
     );
 };
 

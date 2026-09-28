@@ -1,9 +1,7 @@
 import { Copy, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { FaFacebookF } from "react-icons/fa";
-import CyberBackground from "../components/CyberBackground";
-import Header from "../components/Header";
-import Seo from "../components/Seo";
+import PageLayout from "../components/PageLayout";
 
 const EMAIL = "cedratovonanahary@gmail.com";
 const GITHUB_URL = "https://github.com/Cjaoh";
@@ -28,10 +26,7 @@ const Contact = () => {
     };
 
     return (
-        <main className="relative min-h-screen overflow-hidden text-white" id="main-content" tabIndex={-1}>
-            <Seo title="Contact" description="Contacter Cédrick Ratovonanahary pour une alternance, un stage ou un projet." />
-            <CyberBackground />
-            <Header />
+        <PageLayout title="Contact" description="Contacter Cédrick Ratovonanahary pour une alternance, un stage ou un projet.">
 
             <section
                 className="relative z-10 flex min-h-screen items-center px-6 pb-20 pt-32 sm:px-10 lg:px-20"
@@ -147,7 +142,7 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-        </main>
+        </PageLayout>
     );
 };
 

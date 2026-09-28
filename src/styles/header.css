@@ -1,8 +1,8 @@
 :root {
-  --nav-primary: #c084fc;
+  --nav-primary: #67e8f9;
   --nav-secondary: #cbd5e1;
   --nav-border: rgba(148, 163, 184, 0.24);
-  --nav-gradient: linear-gradient(135deg, #c084fc, #a78bfa 50%, #67e8f9);
+  --nav-gradient: linear-gradient(135deg, #67e8f9, #22d3ee 50%, #06b6d4);
   --nav-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -23,12 +23,12 @@
 .nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; min-height: 76px; margin: 0 auto; padding: 0 2rem; gap: 1.5rem; }
 .nav-brand { display: flex; align-items: center; color: inherit; text-decoration: none; }
 .brand-logo { display: flex; align-items: center; gap: 0.3rem; font-family: "Courier New", monospace; font-size: 1.5rem; font-weight: 700; white-space: nowrap; }
-.logo-bracket { color: #a78bfa; }
+.logo-bracket { color: #22d3ee; }
 .logo-text { background: var(--nav-gradient); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .nav-menu { display: flex; align-items: center; gap: 0.55rem; }
 .nav-link { position: relative; display: flex; align-items: center; gap: 0.5rem; min-height: 42px; padding: 0.5rem 0.85rem; color: var(--nav-secondary); border-radius: 8px; font-size: 0.92rem; font-weight: 700; text-decoration: none; transition: color var(--nav-transition), background var(--nav-transition); }
 .nav-link::before { position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; content: ""; background: var(--nav-gradient); transform: translateX(-50%); transition: width var(--nav-transition); }
-.nav-link:hover, .nav-link.active { color: var(--nav-primary); background: rgba(192, 132, 252, 0.08); }
+.nav-link:hover, .nav-link.active { color: var(--nav-primary); background: rgba(103, 232, 249, 0.08); }
 .nav-link.active::before { width: 78%; }
 .nav-controls { display: flex; align-items: center; }
 .menu-toggle { display: none; flex-direction: column; align-items: center; justify-content: center; min-width: 42px; min-height: 42px; gap: 4px; padding: 0.6rem; color: #f1f5f9; cursor: pointer; background: rgba(30, 41, 59, 0.82); border: 1px solid var(--nav-border); border-radius: 8px; transition: color var(--nav-transition), border-color var(--nav-transition); }

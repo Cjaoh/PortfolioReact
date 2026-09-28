@@ -12,7 +12,7 @@ const setMetaContent = (selector, content) => {
 const Seo = ({ title, description = DEFAULT_DESCRIPTION }) => {
   useEffect(() => {
     const pageTitle = `${title} | ${SITE_NAME}`;
-    const pageUrl = window.location.href;
+    const pageUrl = `${window.location.origin}${window.location.pathname}`;
     const imageUrl = new URL("/images/pdp2.png", window.location.origin).href;
 
     document.title = pageTitle;
